@@ -1,8 +1,11 @@
 require 'open-uri'
 
+# I do create a costant and I associate a link to it
 WORD_URL = "http://learncodethehardway.org/words.txt"
+# create a new costant empty lists
 WORDS = []
 
+# create a costant with hash
 PHRASES = {
   "class ### < ###\nend" =>
     "Make a class named ### that is-a ###.",
@@ -16,8 +19,11 @@ PHRASES = {
     "From *** get the *** attribute and set it to '***'."
 }
 
+# in case I pass a method "english" while launching the program
+# PHRASE_FIRST results True
 PHRASE_FIRST = ARGV[0] == "english"
 
+# open WORD_URL costant
 open(WORD_URL) {|f|
   f.each_line {|word| WORDS.push(word.chomp)}
 }
